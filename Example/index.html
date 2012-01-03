@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Canvas Tests</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Class.Binds.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../Source/Loader.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<img src="loader.png" id="img" />
+<div>
+	<button id="start">Start</button>
+	<button id="pause">Pause</button>
+	<button id="stop">Stop</button>
+</div>
+<script type="text/javascript" charset="utf-8">
+window.addEvent('load', function(){
+	var instance = new Loader('img', {
+		autoInject: document.body,
+		width: 54,
+		height: 54
+	});
+
+	document.id('start').addEvent('click', instance.bound('start'));
+	document.id('pause').addEvent('click', instance.bound('pause'));
+	document.id('stop').addEvent('click', instance.bound('stop'));
+});
+</script>
+</body>
+</html>
